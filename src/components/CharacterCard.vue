@@ -1,16 +1,19 @@
 <script>
     export default {
         name: "CharacterCard",
+        props: {
+            info: Object,
+        }
     }
 </script>
 
 <template>
   
     <div class="character-card py-3 mb-3 d-flex flex-column text-center">
-        <img src="" alt="Character Image">
-        <strong class="character-name my-2">Nome Personaggio</strong>
-        <small class="infos">Nome serie</small>
-        <small class="infos">Stato</small>
+        <img :src="info.img" alt="Character Image">
+        <strong class="character-name my-2">{{ info.name }}</strong>
+        <small class="card-infos">{{ info.category }}</small>
+        <small class="card-infos">{{ info.status }}</small>
     </div>
    
 </template>
@@ -20,6 +23,7 @@
 .character-card{
     width: calc(100% / 5 - 1.25rem);
     margin-right: 1.25rem;
+    padding: 0 .625rem;
     background-color: #2e3a46;
 }
 
@@ -27,8 +31,13 @@
     color: white;
 }
 
-.infos{
+.card-infos{
     color: #77756d;
+}
+
+img{
+    max-width: 12.5rem;
+    max-height: 15.625rem;
 }
 
 </style>
