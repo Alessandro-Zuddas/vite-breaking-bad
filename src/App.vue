@@ -7,7 +7,7 @@ export default {
   components: {
     PageTitle,
     AppNav,
-    AppMain
+    AppMain,
   }
 }
 </script>

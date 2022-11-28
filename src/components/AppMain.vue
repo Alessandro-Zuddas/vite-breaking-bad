@@ -1,6 +1,13 @@
 <script>
+
+import CharacterCard from './CharacterCard.vue';
+
     export default {
-       name: "AppMain",
+        name: "AppMain",
+
+        components: {
+            CharacterCard
+        }
     }
 </script>
 
@@ -10,10 +17,11 @@
             <div class="ms-container-sm px-3 py-2 d-flex align-items-center">
                 <strong>Found --- characters</strong>
             </div>
-            <div class="ms-container-small d-flex justify-content-between px-5 mt-3">
+            <div class="ms-container-cards d-flex justify-content-between px-3 mt-3">
 
                 <!-- Implementare Componente Card -->
-                
+               <CharacterCard />
+
             </div>
         </div>
     </div>
