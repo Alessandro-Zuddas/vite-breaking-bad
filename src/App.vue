@@ -1,9 +1,13 @@
 <script>
 import PageTitle from './components/PageTitle.vue';
+import AppNav from './components/AppNav.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   components: {
-    PageTitle
+    PageTitle,
+    AppNav,
+    AppMain
   }
 }
 </script>
@@ -11,6 +15,8 @@ export default {
 <template>
   <div>
     <PageTitle/>
+    <AppNav />
+    <AppMain />
   </div>
 </template>
 
