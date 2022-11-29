@@ -1,10 +1,13 @@
 <script>
-    export default {
-        name: "CharacterCard",
-        props: {
-            info: Object,
-        }
+
+export default {
+    name: "CharacterCard",
+    
+    props: {
+        info: Object,
     }
+}
+
 </script>
 
 <template>

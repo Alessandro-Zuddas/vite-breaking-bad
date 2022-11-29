@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import CharacterCard from './CharacterCard.vue';
+import { store } from "../store.js"
 
     export default {
 
@@ -12,15 +13,15 @@ import CharacterCard from './CharacterCard.vue';
     },
     data() {
         return {
-            characters: [],
+            store,
             loaded: false,
         }
     },
     created(){
         axios.get("https://www.breakingbadapi.com/api/characters")
         .then((response) => {
-            this.characters = response.data;
-            console.log(this.characters);
+            this.store.characters = response.data;
+            console.log(this.store.characters);
             this.loaded = true;
         });
     }
@@ -31,13 +32,13 @@ import CharacterCard from './CharacterCard.vue';
     <div>
         <div class="ms-container py-3">
             <div class="ms-container-sm px-3 py-2 d-flex align-items-center">
-                <strong>Found {{ this.characters.length }} characters</strong>
+                <strong>Found {{ this.store.characters.length }} characters</strong>
             </div>
             <div class="ms-container-cards d-flex justify-content-between px-3 mt-3"
                 v-if="this.loaded === true">
 
                 <!-- Implementare Componente Card -->
-               <CharacterCard v-for="character in this.characters"
+               <CharacterCard v-for="character in this.store.characters"
                 :info="character" />
 
             </div>
