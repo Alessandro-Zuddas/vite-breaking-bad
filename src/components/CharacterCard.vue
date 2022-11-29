@@ -10,7 +10,7 @@
 <template>
   
     <div class="character-card py-3 mb-3 d-flex flex-column text-center">
-        <img :src="info.img" alt="Character Image">
+        <img :src="info.img" :alt="info.name">
         <strong class="character-name my-2">{{ info.name }}</strong>
         <small class="card-infos">{{ info.category }}</small>
         <small class="card-infos">{{ info.status }}</small>
