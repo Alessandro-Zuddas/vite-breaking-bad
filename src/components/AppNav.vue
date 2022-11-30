@@ -29,6 +29,13 @@ export default {
                     console.log(this.store.characters);
                     this.loaded = true;
                 });
+            }else if(store.categoryValue === "all"){
+                axios.get("https://www.breakingbadapi.com/api/characters")
+                .then((response) => {
+                    this.store.characters = response.data;
+                    console.log(this.store.characters);
+                    this.loaded = true;
+                });
             }
         }
     }
@@ -41,6 +48,7 @@ export default {
             <label class="label">Select category:
                 <select class="category-select" name="category-select" id="category-select"
                  v-model="store.categoryValue" @change="onSelectClick">
+                    <option value="all" selected>All</option>
                     <option value="breaking">Breaking Bad</option>
                     <option value="betterCallSaul">Better Call Saul</option>
                 </select>
