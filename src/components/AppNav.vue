@@ -14,7 +14,7 @@ export default {
         }
     },
     methods:{
-        onSelectClick(){
+        onSelectChange(){
             if(store.categoryValue === "breaking"){
                 axios.get("https://www.breakingbadapi.com/api/characters?category=Breaking+Bad")
                 .then((response) => {
@@ -47,7 +47,7 @@ export default {
         <form action="">
             <label class="label">Select category:
                 <select class="category-select" name="category-select" id="category-select"
-                 v-model="store.categoryValue" @change="onSelectClick">
+                 v-model="store.categoryValue" @change="onSelectChange">
                     <option value="all" selected>All</option>
                     <option value="breaking">Breaking Bad</option>
                     <option value="betterCallSaul">Better Call Saul</option>
